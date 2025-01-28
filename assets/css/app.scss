@@ -1,0 +1,22 @@
+// Import Bulma and custom theme
+@import "bulma";
+@import "bulma-clean-theme";
+
+// Replace deprecated color functions
+$color-rgb: map.merge(
+  $color-rgb,
+  (
+    $name: $value,
+  )
+);
+
+// Replace red(), green(), blue() with color.channel()
+$rgb-values: (color.channel($value, "red", $space: rgb), color.channel($value, "green", $space: rgb), color.channel($value, "blue", $space: rgb));
+
+// Custom styles
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: $body-background-color;
+}
+
+// Add additional custom styles as needed
